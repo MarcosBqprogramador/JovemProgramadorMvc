@@ -7,11 +7,12 @@ namespace JovemProgramadorMvc.Models
 {
     public class ProfessorModel
     {
-        public string nome { get; set; }
-        public string idade { get; set; }
-        public string contato { get; set; }
-        public string email { get; set; }
-        public string cep { get; set; }
+        public int Id { get; set; }
+        public string Nome { get; set; }
+        public string Idade { get; set; }
+        public string Contato { get; set; }
+        public string Email { get; set; }
+        public string Cep { get; set; }
         public ProfessorModel()
         {
 
