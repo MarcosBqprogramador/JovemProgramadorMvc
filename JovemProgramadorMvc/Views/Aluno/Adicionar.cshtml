@@ -1,30 +1,37 @@
-﻿<div>
+﻿@model AlunoModel
+
+
+
+<div>
     <h1>Adicionar novo Aluno</h1>
 </div>
-<form>
+
+
+
+<form asp-controller="Aluno" asp-action="Inserir" method="post" >
     <div class="mb-3">
         <label for="ExInputNome" class="form-label">Nome do aluno</label>
-        <input type="text" class="form-control col-5" id="ExInputNome">
+        <input type="text" asp-for="Nome" class="form-control col-5" id="ExInputNome">
     </div>
 
     <div class="mb-3">
         <label for="ExInputIdade" class="form-label">Idade</label>
-        <input type="number" class="form-control col-1" id="ExInputIdade">
+        <input type="number"  asp-for="Idade" class="form-control col-1" id="ExInputIdade">
     </div>
 
     <div class="mb-3">
         <label for="ExInputContato" class="form-label">Telefone de Contato</label>
-        <input type="text" class="form-control col-3" placeholder="(99) 99999-9999" id="ExInputContato" />
+        <input type="text"  asp-for="Contato" class="form-control col-3" placeholder="(99) 99999-9999" id="ExInputContato" />
     </div>
 
     <div class="mb-3">
         <label for="ExInputEmail" class="form-label">Email</label>
-        <input type="email" class="form-control col-3" id="ExInputEmail">
+        <input type="email"  asp-for="Email" class="form-control col-3" id="ExInputEmail">
     </div>
 
     <div class="mb-3">
         <label for="ExInputCep" class="form-label">CEP</label>
-        <input type="text" class="form-control col-2" id="ExInputCep" placeholder="99999-99">
+        <input type="text"  asp-for="Cep" class="form-control col-2" id="ExInputCep" placeholder="99999-99">
     </div>
 
     <div>
@@ -34,7 +41,7 @@
     </div>
 
     <div class="text-center">
-        <a type="submit" class="btn btn-primary" asp-controller="Aluno" asp-action="Mensagem">Adicionar</a>
+        <button type="submit" class="btn btn-primary" >Adicionar</button>
         <a class="btn btn-primary" type="button" asp-controller="Aluno" asp-action="Index">Voltar</a>
     </div>
 </form>

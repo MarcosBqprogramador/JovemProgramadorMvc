@@ -14,8 +14,8 @@ namespace JovemProgramadorMvc.Controllers
     public class AlunoController : Controller
     {
         private readonly IConfiguration _configuration;
-        private readonly IAlunosRepositorio _alunoRepositorio;
-        public AlunoController(IConfiguration configuration, IAlunosRepositorio alunoRepositorio)
+        private readonly IAlunoRepositorio _alunoRepositorio;
+        public AlunoController(IConfiguration configuration, IAlunoRepositorio alunoRepositorio)
         {
             _configuration = configuration;
             _alunoRepositorio = alunoRepositorio;
@@ -65,6 +65,8 @@ namespace JovemProgramadorMvc.Controllers
             }
             return View("Buscarcep", enderecoModel);
         }
+
+        [HttpPost]
         public IActionResult Inserir(AlunoModel aluno)
         {
             _alunoRepositorio.Inserir(aluno);

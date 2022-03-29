@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace JovemProgramadorMvc.Data.Repositorio
 {
-    public class AlunoRepositorio : IAlunosRepositorio
+    public class AlunoRepositorio : IAlunoRepositorio
     {
         private readonly BancoContexto _bancoContexto;
 

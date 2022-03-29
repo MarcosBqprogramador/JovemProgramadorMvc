@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace JovemProgramadorMvc.Data.Repositorio.interfaces
 {
-    public interface IAlunosRepositorio
+    public interface IAlunoRepositorio
     {
         AlunoModel Inserir(AlunoModel aluno);
     }
