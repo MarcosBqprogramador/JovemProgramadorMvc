@@ -1,4 +1,5 @@
-﻿using JovemProgramadorMvc.Models;
+﻿using JovemProgramadorMvc.Data.Repositorio.interfaces;
+using JovemProgramadorMvc.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using System;
@@ -13,9 +14,11 @@ namespace JovemProgramadorMvc.Controllers
     public class AlunoController : Controller
     {
         private readonly IConfiguration _configuration;
-        public AlunoController(IConfiguration configuration)
+        private readonly IAlunosRepositorio _alunoRepositorio;
+        public AlunoController(IConfiguration configuration, IAlunosRepositorio alunoRepositorio)
         {
             _configuration = configuration;
+            _alunoRepositorio = alunoRepositorio;
         }
         public IActionResult Index()
         {
@@ -61,6 +64,11 @@ namespace JovemProgramadorMvc.Controllers
             {
             }
             return View("Buscarcep", enderecoModel);
+        }
+        public IActionResult Inserir(AlunoModel aluno)
+        {
+            _alunoRepositorio.Inserir(aluno);
+            return RedirectToAction("Index");
         }
     }
 }

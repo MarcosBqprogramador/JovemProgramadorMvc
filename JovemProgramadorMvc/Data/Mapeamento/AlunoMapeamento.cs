@@ -12,7 +12,7 @@ namespace JovemProgramadorMvc.Data.Mapeamento
         {
             public void Configure(EntityTypeBuilder<AlunoModel> builder)
             {
-                builder.ToTable("Alunos");
+                builder.ToTable("Aluno");
 
 
 
