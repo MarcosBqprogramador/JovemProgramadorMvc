@@ -26,5 +26,9 @@ namespace JovemProgramadorMvc.Data.Repositorio
             return aluno;
 
         }
+        public List<AlunoModel> BuscarAlunos()
+        {
+            return _bancoContexto.Aluno.ToList();
+        }
     }
 }
