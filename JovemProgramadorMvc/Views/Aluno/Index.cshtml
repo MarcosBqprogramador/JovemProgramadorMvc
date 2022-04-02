@@ -20,6 +20,22 @@
             </tr>
         </thead>
         <tbody>
+            @if(Model != null && Model.any())
+            {
+                foreach(AlunoModel aluno in Model)
+                {
+            <tr>
+                <th scope="row"> @aluno.Id</th>
+                <td> @aluno.Nome</td>
+                <td> @aluno.Idade</td>
+                <td> @aluno.Contato</td>
+                <td> @aluno.Email</td>
+                <td> @aluno.Cep</td>
+            </tr>
+                }
+            }
+
+
             <tr>
                 <th scope="row">1</th>
                 <td>Marcos Paulo de Souza Vicente</td>

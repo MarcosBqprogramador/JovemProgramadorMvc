@@ -15,13 +15,16 @@ namespace JovemProgramadorMvc.Data.Repositorio
         {
 
             _bancoContexto = bancoContexto;
+
         }
 
         public AlunoModel Inserir(AlunoModel aluno)
         {
+
             _bancoContexto.Aluno.Add(aluno);
             _bancoContexto.SaveChanges();
             return aluno;
+
         }
     }
 }
