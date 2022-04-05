@@ -1,4 +1,7 @@
-﻿@if (ViewData["Mensagem"] != null)
+﻿@model List<AlunoModel>
+
+
+@if (ViewData["Mensagem"] != null)
 {
     <div class="alert-danger text-center">
         @ViewData["Mensagem"]
@@ -20,14 +23,14 @@
             </tr>
         </thead>
         <tbody>
-            @if(Model != null && Model.any())
+            @if(Model != null && Model.Any())
             {
                 foreach(AlunoModel aluno in Model)
                 {
                     <tr>
                         <th scope="row"> @aluno.Id</th>
                         <td> @aluno.Nome</td>
-                        <td> @aluno.Idade</td>
+                        <td> @aluno.Idade anos</td>
                         <td> @aluno.Contato</td>
                         <td> @aluno.Email</td>
                         <td> @aluno.Cep</td>

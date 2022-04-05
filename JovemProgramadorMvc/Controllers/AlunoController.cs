@@ -22,7 +22,8 @@ namespace JovemProgramadorMvc.Controllers
         }
         public IActionResult Index()
         {
-            return View();
+            var aluno = _alunoRepositorio.BuscarAlunos();
+            return View(aluno);
         }
         public IActionResult Adicionar()
         {
