@@ -34,6 +34,11 @@
                         <td> @aluno.Contato</td>
                         <td> @aluno.Email</td>
                         <td> @aluno.Cep</td>
+                        <td>
+                            <div>
+                                <button class="btn-primary" type="button" >Endereço</button>
+                            </div>
+                        </td>
                     </tr>
                 }
             }
@@ -48,7 +53,7 @@
                 <td>88353-529</td>
                 <td>
                     <div>
-                        <a class="btn btn-primary" type="button" asp-controller="Aluno" asp-action="Buscarcep" asp-route-cep="88353-529">Endereço</a>
+                        <a class="btn btn-primary" type="button" asp-controller="Aluno" asp-action="Index" asp-route="aluno">Endereço</a>
                     </div>
                 </td>
             </tr>
