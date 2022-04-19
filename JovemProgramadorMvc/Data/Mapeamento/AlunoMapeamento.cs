@@ -16,7 +16,7 @@ namespace JovemProgramadorMvc.Data.Mapeamento
 
 
 
-                builder.HasKey(t => t.Id);
+                builder.HasKey(t => t.id);
 
 
 

@@ -27,62 +27,32 @@
             {
                 foreach(AlunoModel aluno in Model)
                 {
-                    <tr>
-                        <th scope="row"> @aluno.Id</th>
-                        <td> @aluno.Nome</td>
-                        <td> @aluno.Idade anos</td>
-                        <td> @aluno.Contato</td>
-                        <td> @aluno.Email</td>
-                        <td> @aluno.Cep</td>
-                        <td>
-                            <div>
-                                <a class="btn btn-primary" type="button" asp-controller="Aluno" asp-action="Buscarcep" asp-route-cep="Aluno.cep" >Endereço</a>
-                            </div>
-                        </td>
-                    </tr>
+            <tr>
+                <th scope="row"> @aluno.id</th>
+                <td> @aluno.Nome</td>
+                <td> @aluno.Idade anos</td>
+                <td> @aluno.Contato</td>
+                <td> @aluno.Email</td>
+                <td> @aluno.Cep</td>
+                <td>
+                    <div>
+                        <a class="btn btn-primary" type="button" asp-controller="Aluno" asp-action="Buscarcep" asp-route-cep="@aluno.Cep">Endereço</a>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <a class="btn btn-primary" type="button" asp-controller="Aluno" asp-action="Editar" asp-route-id="@aluno.id">Editar</a>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <a class="btn btn-primary" type="button" asp-controller="Aluno" asp-action="Excluir" asp-route-id="@aluno.id">Excluir</a>
+                    </div>
+                </td>
+            </tr>
                 }
             }
 
-
-            <tr>
-                <th scope="row">1</th>
-                <td>Marcos Paulo de Souza Vicente</td>
-                <td>17 anos</td>
-                <td>(47) 9 9169-8915</td>
-                <td>marcospaulodesouza1502@gmail.com</td>
-                <td>88353-529</td>
-                <td>
-                    <div>
-                        <a class="btn btn-primary" type="button" asp-controller="Aluno" asp-action="Index" asp-route-cep="88353-529">Endereço</a>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Matheus Henrique</td>
-                <td>17 anos</td>
-                <td>(47) 99208-8572</td>
-                <td>contato.theusp@gmail.com</td>
-                <td>88353-529</td>
-                <td>
-                    <div>
-                        <a class="btn btn-primary" type="button" asp-controller="Aluno" asp-action="Buscarcep" asp-route-cep="88353-529">Endereço</a>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td>Matheus Fernandes da Silva</td>
-                <td>22 anos</td>
-                <td>(47) 9 8495-2089</td>
-                <td>matheus.silva18@alunos.sc.senac.br</td>
-                <td>88350-682</td>
-                <td>
-                    <div>
-                        <a class="btn btn-primary" type="button" asp-controller="Aluno" asp-action="Buscarcep" asp-route-cep="88350-682">Endereço</a>
-                    </div>
-                </td>
-            </tr>
         </tbody>
     </table>
     <div class="text-center">

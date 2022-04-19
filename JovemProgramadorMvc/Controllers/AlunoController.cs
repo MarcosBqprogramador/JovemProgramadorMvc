@@ -70,7 +70,24 @@ namespace JovemProgramadorMvc.Controllers
         [HttpPost]
         public IActionResult Inserir(AlunoModel aluno)
         {
-            _alunoRepositorio.Inserir(aluno);
+            var retorno = _alunoRepositorio.Inserir(aluno);
+            if (retorno != null)
+            {
+                TempData["Mensagem2"] = "Dados gravados com sucesso!";
+                
+            }
+            return RedirectToAction("index");
+        }
+        public IActionResult Editar (int id )
+        {
+            var aluno = _alunoRepositorio.BuscarId(id);
+            return View("Editar", aluno);
+        }
+
+        public IActionResult Atualizar(AlunoModel aluno)
+        {
+            var retorno = _alunoRepositorio.Atualizar(aluno);
+
             return RedirectToAction("Index");
         }
     }

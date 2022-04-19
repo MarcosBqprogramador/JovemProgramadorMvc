@@ -11,5 +11,9 @@ namespace JovemProgramadorMvc.Data.Repositorio.interfaces
         AlunoModel Inserir(AlunoModel aluno);
 
         List<AlunoModel> BuscarAlunos();
+
+        AlunoModel BuscarId(int id);
+
+        bool Atualizar(AlunoModel aluno);
     }
 }
