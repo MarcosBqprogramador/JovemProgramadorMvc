@@ -15,5 +15,9 @@ namespace JovemProgramadorMvc.Data.Repositorio.interfaces
         AlunoModel BuscarId(int id);
 
         bool Atualizar(AlunoModel aluno);
+
+        bool Excluir(int id);
+
+         
     }
 }

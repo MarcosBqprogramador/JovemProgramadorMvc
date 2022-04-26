@@ -90,5 +90,30 @@ namespace JovemProgramadorMvc.Controllers
 
             return RedirectToAction("Index");
         }
+
+        public IActionResult Excluir(int id)
+        {
+
+            var retorno = _alunoRepositorio.Excluir(id);
+            if (retorno != false)
+            {
+                TempData["Mensagem3"] = "Aluno excluido com sucesso!";
+            }
+            else
+            {
+
+                TempData["Mensagem3"] = "Não foi possivel excluir o aluno";
+            }
+                
+            return RedirectToAction("Index");
+
+        }
+
+        public IActionResult Filtro()
+        {
+            return View();
+        }
     }
+
+
 }

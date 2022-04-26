@@ -12,9 +12,8 @@ namespace JovemProgramadorMvc.Data.Mapeamento
         {
             public void Configure(EntityTypeBuilder<AlunoModel> builder)
             {
-                builder.ToTable("Alunos");
-                //builder.ToTable("Aluno1");
-                //builder.ToTable("Aluno");
+                //builder.ToTable("Alunos");
+                builder.ToTable("Aluno");
 
 
 

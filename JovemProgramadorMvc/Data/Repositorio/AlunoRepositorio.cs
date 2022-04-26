@@ -57,5 +57,25 @@ namespace JovemProgramadorMvc.Data.Repositorio
 
         }
 
+        public bool Excluir(int id)
+        {
+            AlunoModel aluno = BuscarId(id);
+
+            if (aluno == null)
+                return false;
+
+            _bancoContexto.Aluno.Remove(aluno);
+            _bancoContexto.SaveChanges();
+
+            return true;
+
+        }
+
+        public List<AlunoModel> FiltroIdade(int Idade)
+        {
+            return _bancoContexto.Aluno.Where(x => x.Idade == Idade).ToList();
+        }
+        
+
     }
 }
