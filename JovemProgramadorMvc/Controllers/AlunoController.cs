@@ -20,9 +20,19 @@ namespace JovemProgramadorMvc.Controllers
             _configuration = configuration;
             _alunoRepositorio = alunoRepositorio;
         }
-        public IActionResult Index()
+        public IActionResult Index(AlunoModel filtroAluno )
         {
-            var aluno = _alunoRepositorio.BuscarAlunos();
+            List<AlunoModel> aluno = new();
+            if(filtroAluno.Idade > 0 )
+            {
+                aluno = _alunoRepositorio.FiltroIdade(filtroAluno.Idade);
+            }
+            else
+            {
+                aluno = _alunoRepositorio.BuscarAlunos();
+            }
+
+             
             return View(aluno);
         }
         public IActionResult Adicionar()
@@ -109,10 +119,12 @@ namespace JovemProgramadorMvc.Controllers
 
         }
 
-        public IActionResult Filtro()
+        public IActionResult FiltroIdade()
         {
             return View();
         }
+
+       
     }
 
 
