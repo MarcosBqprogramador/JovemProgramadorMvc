@@ -5,12 +5,24 @@
     <div class="mb-3">
         <label for="Idade" class="col-form-label">Idade igual à</label>
 
-        <p><input type="number" asp-for="Idade" class="form-control col-1" id="InputFiltroIdade"> anos </p>
+        <p><input type="number" asp-for="Idade" class="form-control col-1" id="InputFiltroIdade"><select class="form-select" aria-label="Default select example">
+                                                                                                     <option selected>Idade:</option>
+                                                                                                     <option value="1">Maior que:</option>
+                                                                                                     <option value="2">Igual à que:</option>
+                                                                                                     <option value="3">Menos que :</option>
+                                                                                                 </select> </p>
+    </div>
+
+    <div class="mb-3">
+        <label for="Name" class="form-label">Filtrar por nome:</label>
+        <input type="text" asp-for="Nome" class="form-control col-4" />
     </div>
 
     <div class="text-left">
-        <button type="submit"  class="btn btn-primary col-1">Buscar</button>
+        <button type="submit" class="btn btn-primary col-1">Buscar</button>
     </div>
+
+    
 
 </form>
 <div class="text-center">
