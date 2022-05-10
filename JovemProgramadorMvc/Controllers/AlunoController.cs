@@ -36,6 +36,13 @@ namespace JovemProgramadorMvc.Controllers
             {
                 aluno = _alunoRepositorio.FiltroNome(filtroAluno.Nome);
             }
+
+            if (filtroAluno.Contato != null)
+            {
+                aluno = _alunoRepositorio.FiltroContato(filtroAluno.Contato);
+
+            }
+
             return View(aluno);
 
         }

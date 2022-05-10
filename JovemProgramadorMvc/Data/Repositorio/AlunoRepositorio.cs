@@ -81,6 +81,11 @@ namespace JovemProgramadorMvc.Data.Repositorio
             return _bancoContexto.Aluno.Where(x => x.Nome.Contains(nome)).ToList();
         }
 
+        public List<AlunoModel> FiltroContato (string Contato)
+        {
+            return _bancoContexto.Aluno.Where(x => x.Contato == Contato).ToList();
+        }
+
 
     }
 }
