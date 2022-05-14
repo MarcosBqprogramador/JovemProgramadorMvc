@@ -13,6 +13,7 @@ namespace JovemProgramadorMvc.Models
         public string Contato { get; set; }
         public string Email { get; set; }
         public string Cep { get; set; }
+        public string Operacao { get; set; }
         public AlunoModel()     
         {
 

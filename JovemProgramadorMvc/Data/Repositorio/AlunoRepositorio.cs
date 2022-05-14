@@ -35,9 +35,9 @@ namespace JovemProgramadorMvc.Data.Repositorio
         {
             return _bancoContexto.Aluno.FirstOrDefault(x => x.id == id);
         }
-            
 
-        public bool Atualizar (AlunoModel aluno)
+
+        public bool Atualizar(AlunoModel aluno)
         {
             AlunoModel alunoDb = BuscarId(aluno.id);
 
@@ -71,21 +71,33 @@ namespace JovemProgramadorMvc.Data.Repositorio
 
         }
 
-        public List<AlunoModel> FiltroIdade(int Idade)
+        public List<AlunoModel> FiltroIdade(int idade, string operacao)
         {
-            return _bancoContexto.Aluno.Where(x => x.Idade == Idade).ToList();
+            switch (operacao)
+            {
+                case "1":
+                    return _bancoContexto.Aluno.Where(x => x.Idade > idade).ToList();
+                case "2":
+                    return _bancoContexto.Aluno.Where(x => x.Idade == idade).ToList();
+                case "3":
+                    return _bancoContexto.Aluno.Where(x => x.Idade < idade).ToList();
+
+
+
+
+            }
+            return null;
         }
 
         public List<AlunoModel> FiltroNome(string nome)
         {
-            return _bancoContexto.Aluno.Where(x => x.Nome.Contains(nome)).ToList();
+            throw new NotImplementedException();
         }
 
-        public List<AlunoModel> FiltroContato (string Contato)
+        public List<AlunoModel> FiltroContato(string Contato)
         {
-            return _bancoContexto.Aluno.Where(x => x.Contato == Contato).ToList();
+            throw new NotImplementedException();
         }
-
-
     }
+
 }

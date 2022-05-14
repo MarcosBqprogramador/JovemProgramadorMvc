@@ -26,6 +26,8 @@ namespace JovemProgramadorMvc.Data.Mapeamento
                 builder.Property(t => t.Contato).HasColumnType("varchar(50)");
                 builder.Property(t => t.Email).HasColumnType("varchar(50)");
                 builder.Property(t => t.Cep).HasColumnType("varchar(10)");
+                builder.Property(t => t.Operacao).HasColumnType("varchar(50)");
+
 
 
 
