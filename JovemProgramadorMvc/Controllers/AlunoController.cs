@@ -54,12 +54,14 @@ namespace JovemProgramadorMvc.Controllers
         {
             return View();
         }
-        public async Task<IActionResult> BuscarCep(string cep)
+        public async Task<IActionResult> BuscarCep(AlunoModel aluno)
         {
+            var retorno = _alunoRepositorio.BuscarId(aluno.id);
+            aluno = retorno;
             EnderecoModel enderecoModel = new();
             try
             {
-                cep = cep.Replace("-", "");
+                aluno = Cep.Replace("-", "");
                 using var client = new HttpClient();
                 var result = await client.GetAsync(_configuration.GetSection("ApiCep")["BaseUrl"] + cep + "/json");
                 if (result.IsSuccessStatusCode)
