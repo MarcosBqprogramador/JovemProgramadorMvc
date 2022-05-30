@@ -57,13 +57,13 @@ namespace JovemProgramadorMvc.Controllers
         public async Task<IActionResult> BuscarCep(AlunoModel aluno)
         {
             var retorno = _alunoRepositorio.BuscarId(aluno.id);
-            aluno = retorno;
+            aluno = retorno ;
             EnderecoModel enderecoModel = new();
             try
             {
-                aluno = Cep.Replace("-", "");
+                //aluno = aluno.Cep.Replace("-"," ");
                 using var client = new HttpClient();
-                var result = await client.GetAsync(_configuration.GetSection("ApiCep")["BaseUrl"] + cep + "/json");
+                var result = await client.GetAsync(_configuration.GetSection("ApiCep")["BaseUrl"] + aluno.Cep + "/json");
                 if (result.IsSuccessStatusCode)
                 {
                     enderecoModel = JsonSerializer.Deserialize<EnderecoModel>(
@@ -72,7 +72,7 @@ namespace JovemProgramadorMvc.Controllers
                     {
                         enderecoModel.complemento = "Sem complemento";
                     }
-                    if (Regex.IsMatch(cep, (@"000")) == true)
+                    if (Regex.IsMatch(aluno.Cep, (@"000")) == true)
                     {
                         enderecoModel.logradouro = "CEP geral de " + enderecoModel.localidade;
                         enderecoModel.bairro = "Não especificado";
